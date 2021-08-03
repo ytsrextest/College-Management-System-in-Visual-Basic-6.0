@@ -1,0 +1,17 @@
+Private Sub gosearch_Click()
+adbresult.RecordSource = "select * from library_pass where rollno='" + entersearch.Text + "'"
+adbresult.Refresh
+
+If adbresult.Recordset.EOF Then
+MsgBox "Pass doesn't generated", vbCritical, "Massage"
+Else
+adbresult.Caption = adbresult.RecordSource
+entersearch.Visible = False
+gosearch.Visible = False
+Label5.Visible = False
+DataGridpass.Visible = True
+Label5.Visible = False
+End If
+
+End Sub
+
